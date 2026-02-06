@@ -1,0 +1,17 @@
+﻿absl-py
+altair
+fastapi
+groq
+numpy
+pandas
+pydantic
+scikit-learn
+scipy
+streamlit
+tensorflow
+uv
+langgraph
+langchain
+langchain-core
+langchain-community
+langchain-groq

@@ -1,0 +1,11 @@
+services:
+  agent-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./state:/app/state              # Persists your chat history database
+      - ./faiss_index:/app/faiss_index  # Persists your knowledge base index
+    env_file:
+      - .env                            # Loads your GROQ_API_KEY
+    restart: always
