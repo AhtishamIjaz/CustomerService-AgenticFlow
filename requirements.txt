@@ -16,5 +16,6 @@ langchain
 langchain-core
 langchain-community
 langchain-groq
+tf-keras
 langchain-huggingface
 sentence-transformers
