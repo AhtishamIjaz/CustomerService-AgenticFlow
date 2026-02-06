@@ -11,6 +11,7 @@ streamlit
 tensorflow
 uv
 langgraph
+langgraph-checkpoint-sqlite
 langchain
 langchain-core
 langchain-community
