@@ -16,6 +16,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # --- CRITICAL FIX: FREE DISK SPACE ---
+      - name: Free Disk Space (Cleanup)
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf /usr/lib/jvm
+          sudo docker image prune --all --force
+          df -h # Shows free space in logs for peace of mind
+      # -------------------------------------
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -35,6 +47,3 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/customerservice-agenticflow:${{ github.sha }}
           cache-from: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/customerservice-agenticflow:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_USERNAME }}/customerservice-agenticflow:buildcache,mode=max
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}

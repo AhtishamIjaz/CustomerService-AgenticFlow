@@ -1,21 +1,30 @@
-﻿absl-py
-altair
+﻿# Force CPU-only versions to save space
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+
+# Core Frameworks
+streamlit
 fastapi
-groq
-numpy
 pandas
+numpy
 pydantic
 scikit-learn
 scipy
-streamlit
-tensorflow
+altair
+absl-py
 uv
-langgraph
-langgraph-checkpoint-sqlite
+
+# LangChain & AI Engine
+groq
 langchain
 langchain-core
 langchain-community
 langchain-groq
-tf-keras
 langchain-huggingface
+langgraph
+langgraph-checkpoint-sqlite
 sentence-transformers
+
+# Compatibility
+tf-keras
