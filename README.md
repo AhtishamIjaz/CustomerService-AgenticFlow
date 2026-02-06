@@ -4,7 +4,7 @@ emoji: 🤖
 colorFrom: blue
 colorTo: green
 sdk: docker
-app_port: 8080
+app_port: 8501
 pinned: false
 ---
 
@@ -13,5 +13,5 @@ This application uses a Dockerized Streamlit interface to run an AI-powered cust
 
 ## Deployment Details
 - **Framework:** Streamlit
-- **Infrastructure:** Docker
-- **CI/CD:** GitHub Actions -> Docker Hub -> Hugging Face Spaces
+- **Infrastructure:** Docker (Hugging Face Spaces)
+- **Port Configuration:** 8501 (Internal & External)
