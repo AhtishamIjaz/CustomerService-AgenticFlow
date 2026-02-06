@@ -3,6 +3,10 @@
 torch
 torchvision
 
+# --- THE FIX: ADD THIS LINE ---
+faiss-cpu
+# ------------------------------
+
 # Core Frameworks
 streamlit
 fastapi
