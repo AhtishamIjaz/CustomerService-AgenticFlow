@@ -1,9 +1,12 @@
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from langchain_core.messages import SystemMessage, HumanMessage
+# --- UPDATED LINE BELOW ---
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage 
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
+
+# ... rest of your code ...
 
 # Load environment variables
 load_dotenv()
