@@ -8,7 +8,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 # Load environment variables
 load_dotenv()
 
-# 1. Initialize the LLM (Llama 3.3-70B is excellent for reasoning)
+# 1. Initialize the LLM
 llm = ChatGroq(
     temperature=0, 
     model_name="llama-3.3-70b-versatile",
@@ -20,7 +20,7 @@ embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 vectorstore = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-# --- UPDATED NODES ---
+# --- NODES ---
 
 def retrieve_node(state):
     """Step 1: Retrieve context based on the user's latest query."""
@@ -33,7 +33,7 @@ def retrieve_node(state):
 def grade_documents_node(state):
     """
     Step 2: INDUSTRIAL GRADING. 
-    Evaluates context quality and prevents the 'Strict Dead-end' problem.
+    Fixed to handle cases where the LLM returns "1. 'yes'" instead of just "yes".
     """
     question = state["messages"][-1].content
     context = state.get("context", "")
@@ -42,15 +42,25 @@ def grade_documents_node(state):
         f"You are a Quality Control Analyst for Tech-Pro Solutions.\n"
         f"USER QUESTION: {question}\n"
         f"RETRIEVED CONTEXT: {context}\n\n"
-        "TASK: Evaluate if the context is useful. Return ONLY one of these labels:\n"
-        "1. 'yes' - The context has the exact answer.\n"
-        "2. 'maybe' - The context is related to the topic but might lack a specific detail.\n"
-        "3. 'no' - The context is completely irrelevant.\n"
+        "TASK: Evaluate if the context is useful. Return ONLY one word:\n"
+        "- 'yes' (answer is there)\n"
+        "- 'maybe' (partially related)\n"
+        "- 'no' (irrelevant)\n"
         "Your decision:"
     )
     
     response = llm.invoke([HumanMessage(content=grade_prompt)])
-    decision = response.content.lower().strip()
+    raw_content = response.content.lower()
+
+    # LOGIC FIX: String Keyword Matching
+    # This prevents KeyError by ensuring 'decision' is exactly what the graph expects.
+    if "yes" in raw_content:
+        decision = "yes"
+    elif "maybe" in raw_content:
+        decision = "maybe"
+    else:
+        decision = "no"
+
     return {"relevance": decision}
 
 def generate_node(state):
@@ -63,7 +73,7 @@ def generate_node(state):
     relevance = state.get("relevance", "yes")
 
     # INDUSTRIAL FALLBACK: If 'no', provide contact info immediately.
-    if "no" in relevance:
+    if relevance == "no":
         return {"messages": [AIMessage(content=(
             "I'm sorry, I don't have that specific information in my knowledge base. "
             "However, you can reach our human support team 24/7 at ahtishamijaz55@gmail.com "
@@ -75,12 +85,11 @@ def generate_node(state):
         "You are a professional Tech-Pro Customer Support Expert. "
         "Instructions:\n"
         "1. Answer ONLY using the provided context.\n"
-        "2. If the user asks for a detail not explicitly listed (like a specific price not mentioned), "
-        "explain what is available in the context instead of guessing.\n"
+        "2. If the user asks for a detail not explicitly listed, explain what is available instead of guessing.\n"
         "3. Keep answers concise (2-3 lines).\n"
     )
 
-    if "maybe" in relevance:
+    if relevance == "maybe":
         system_base += "NOTE: The information might be partially related. Be honest about what you find."
 
     full_prompt = SystemMessage(content=f"{system_base}\n\nCONTEXT:\n{context}")
