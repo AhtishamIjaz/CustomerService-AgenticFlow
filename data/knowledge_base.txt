@@ -1,28 +1,35 @@
-# TECH-PRO SOLUTIONS: CUSTOMER SERVICE KNOWLEDGE BASE
+# TECH-PRO SOLUTIONS: EXPANDED INDUSTRIAL KNOWLEDGE BASE
 
-## 1. Shipping and Delivery Policies
-- Standard Shipping: Takes 3-5 business days. Costs $5.99 or free for orders over $50.
-- Express Shipping: Takes 1-2 business days. Costs $15.00.
-- International Shipping: Available to over 50 countries. Delivery takes 7-14 business days.
-- Tracking: Customers can track their order via the 'My Orders' section on our website or through the link sent in the shipping confirmation email.
+## 1. SHIPPING, LOGISTICS & TRACKING
+- Standard Shipping: 3-5 business days. Costs $5.99. Free for orders over $50.
+- Express Shipping: 1-2 business days. Costs $15.00.
+- International: 7-14 business days to 50+ countries.
+- Tracking Method: Use 'My Orders' on the website or the link in the shipping email.
+- Missing Packages: If tracking says 'Delivered' but you don't see it, check with neighbors first, then contact support@tech-pro.com.
+- Delivery Delays: Weather or high volume can delay shipping. Standard shipping is not guaranteed for exact dates.
 
-## 2. Returns and Refunds
-- Policy: Items can be returned within 30 days of purchase if they are in original condition and packaging.
-- Process: To start a return, visit tech-pro.com/returns and enter your order number.
-- Refunds: Once we receive the item, refunds are processed within 5-7 business days to the original payment method.
-- Non-returnable Items: Software downloads, personalized items, and clearance 'Final Sale' products.
+## 2. RETURNS, REFUNDS & CANCELLATIONS
+- Standard Policy: Return within 30 days in original packaging/condition.
+- How to Start: Visit tech-pro.com/returns with your Order Number.
+- Refund Timeframe: 5-7 business days after we receive the item. Sent to original payment method.
+- Non-Returnable: Software, personalized items, 'Final Sale' clearance.
+- Partial Refunds: Items returned damaged or missing parts may receive partial credit.
+- Order Cancellation: You can cancel an order within 1 hour of placement. After 1 hour, it must be processed as a return.
 
-## 3. Account Security and Support
-- Password Reset: Users can reset passwords by clicking "Forgot Password" on the login page. An OTP will be sent to their registered email.
-- Account Lock: Accounts are locked for 30 minutes after 5 failed login attempts for security.
-- Two-Factor Authentication (2FA): We support 2FA via Google Authenticator or SMS. Setup is found in Account Settings > Security.
+## 3. ACCOUNT SECURITY & ACCESS
+- Password Reset: Click 'Forgot Password' to receive an email OTP (One-Time Password).
+- Account Lockout: Locked for 30 minutes after 5 failed attempts. This is a security feature.
+- 2FA Setup: Go to Account Settings > Security. Supports Google Authenticator and SMS.
+- Changing Email: To change your login email, contact security@tech-pro.com for identity verification.
 
-## 4. Technical Troubleshooting
-- Device Not Connecting: Ensure the device is charged. Reset the network settings on the device and try re-pairing.
-- App Crashing: Check for the latest update in the App Store or Play Store. If persistent, clear the app cache and restart your smartphone.
-- Warranty: All hardware products come with a 1-year limited manufacturer's warranty.
+## 4. TROUBLESHOOTING & HARDWARE
+- Connectivity Issues: Charge device fully. Reset network settings. Re-pair via Bluetooth.
+- App Issues: Update via App Store/Play Store. Clear app cache in smartphone settings. Restart device.
+- Warranty: 1-year limited manufacturer's warranty on all hardware. Covers defects, not accidental damage (like liquid or drops).
+- Firmware Updates: Connect device to the Tech-Pro App to check for mandatory firmware updates.
 
-## 5. Contacting Human Support
-- Live Chat: Available 24/7 on our website.
-- Email: support@tech-pro.com (Response time: 24 hours).
+## 5. SUPPORT CONTACTS (24/7)
+- Live Chat: Always available on our homepage.
+- Email: ahtishamijaz55@gmail.com (24-hour response).
 - Phone: 1-800-TECH-PRO (Mon-Fri, 9 AM - 6 PM EST).
+- Escalations: For unresolved issues, ask for a 'Supervisor' via email.
